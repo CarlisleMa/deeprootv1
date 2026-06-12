@@ -1,0 +1,15 @@
+services:
+  neo4j:
+    image: neo4j:5-community
+    container_name: neo4j-deeproot
+    ports:
+      - "7474:7474"   # Browser UI
+      - "7687:7687"   # Bolt protocol (driver connects here)
+    environment:
+      - NEO4J_AUTH=${NEO4J_USER:-neo4j}/${NEO4J_PASSWORD:-password}
+      - NEO4J_PLUGINS=["apoc"]
+      - NEO4J_dbms_security_procedures_unrestricted=apoc.*
+    volumes:
+      - ./neo4j-data:/data
+      - ./neo4j-logs:/logs
+    restart: unless-stopped

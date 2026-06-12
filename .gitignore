@@ -1,0 +1,41 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# ---- Secrets / environment (NEVER commit) ----
+.env
+*.key
+
+# ---- Neo4j local data (created by docker-compose) ----
+neo4j-data/
+neo4j-logs/
+
+# ---- Local graph snapshots (backup_graph.py output; can leak the DB endpoint) ----
+backups/
+
+# ---- Run logs ----
+logs/
+*.log
+
+# ---- Large / externally-sourced data (not redistributed; see data/README.md) ----
+src/data/*.parquet
+data/historical_corpus/*full*.txt
+
+# ---- Generated evaluation plots (keep the dir via .gitkeep) ----
+src/evaluation/plots/*.png
+src/evaluation/plots/*.pdf
+
+# ---- IDE / agent / OS cruft ----
+.vscode/
+.idea/
+.claude/
+*.swp
+.DS_Store
+Thumbs.db

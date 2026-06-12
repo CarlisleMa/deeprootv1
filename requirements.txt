@@ -1,0 +1,24 @@
+# Core
+neo4j>=5.20,<6.0
+pydantic>=2.0,<3.0
+python-dotenv>=1.0
+
+# LLM clients
+google-genai>=1.0.0
+anthropic>=0.30   # Task A reasoning-quality judge (Claude Sonnet 4.6 / Opus 4.7)
+openai>=1.0       # Reserved for cross-family baselines
+
+# Data loading
+pandas>=2.0
+pyarrow>=15.0    # Parquet engine for COCONUT compound database
+requests>=2.31
+rdkit>=2024.3    # Canonical SMILES + InChIKey for Chemical_Compound identity
+
+# Evaluation / plotting
+scikit-learn>=1.4
+matplotlib>=3.7
+numpy>=1.26
+
+# Development
+pytest>=8.0
+ipykernel>=6.0
